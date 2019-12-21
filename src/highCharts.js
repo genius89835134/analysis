@@ -66,7 +66,6 @@ export default class HighCharts extends Component {
   }
   render() {
     const { chartOptions } = this.state;
-    console.log(chartOptions);
     return (
       <div>
         <HighchartsReact options={chartOptions} highcharts={Highcharts} />

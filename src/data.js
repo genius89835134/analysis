@@ -13,7 +13,6 @@ export default class Data extends Component {
 
   componentDidMount() {
     this.setState({ loading: true });
-    console.log(this.props.match.params.id);
     (async () => {
       const path = `http://211.75.191.19:3006/file/${this.props.match.params.id}`;
       const res = await fetch(path.replace(/\"/g, ''));
@@ -541,7 +540,7 @@ export default class Data extends Component {
     return (
       <div>
         <div style={{ width: '100', backgroundColor: '#0B9ED9', fontSize: 32, color: '#F2F2F2', height: '50px', textAlign: 'center' }}>
-          特徵分析
+          元弘資訊-特徵分析
         </div>
         <div style={{ backgroundColor: '#F5F5F5', padding: 24, }}>
           <PageHeader ghost={false} title='分析結果' extra={[<Button type='primary' key='1' onClick={() => { this.props.history.goBack(); }}>返回</Button>]}>

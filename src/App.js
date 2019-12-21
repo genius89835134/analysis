@@ -122,7 +122,7 @@ export default class App extends Component {
     return (
       <div>
         <div style={{ width: '100', backgroundColor: '#0B9ED9', fontSize: 32, color: '#F2F2F2', height: '50px', textAlign: 'center' }}>
-          特徵分析
+          元弘資訊-特徵分析
         </div>
 
         <div style={{ backgroundColor: '#F5F5F5', padding: 24, }}>

@@ -9,6 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index.js',
+    publicPath: '/'
   },
   module: {
     rules: [{
@@ -50,13 +51,21 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.join(__dirname, 'public', 'index.html'),
-      favicon: path.join(__dirname, 'public', 'logo.svg')
+      favicon: path.join(__dirname, 'public', 'winhome.ico')
     }),
+    new Dotenv({
+      path: './.env', // load this now instead of the ones in '.env'
+      safe: true, // load '.env.example' to verify the '.env' variables are all set. Can also be a string to a different file.
+      systemvars: true, // load all the predefined 'process.env' variables which will trump anything local per dotenv specs.
+      silent: true, // hide any errors
+      defaults: false // load '.env.defaults' as the default values if empty.
+    })
   ],
   devServer: {
     port: dotenv.parsed.APP_PORT || 8003,
     host: dotenv.parsed.APP_HOST || 'localhost',
     inline: true,
     hot: true,
+    historyApiFallback: true,
   },
 };
